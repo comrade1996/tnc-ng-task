@@ -1,37 +1,55 @@
+<div class="cover">
+  <div class="card">
+    <nav class="navbar">
+      <img alt="user avatar" class="avatar" src="https://avatars.dicebear.com/api/avataaars/solider.svg"> <span
+      class="px-3">Omair Gibreel</span>
+      <span>TNC Task </span>
+    </nav>
 
-<form [formGroup]="QAForm" (ngSubmit)="onSubmit()">
-  <div formArrayName="questions">
-    <div *ngFor="let question of questions().controls; let questionIndex=index">
-      <div
-        [formGroupName]="questionIndex"
-        style="border: 1px solid rgb(110, 110, 228); padding: 10px; width: 600px; margin: 5px;"
-      >
-        {{questionIndex}} Question :
-        <input type="text" formControlName="question" />
 
-        <button (click)="removeQuestion(questionIndex)">Remove</button>
+    <form [formGroup]="QAForm"  (ngSubmit)="onSubmit()">
+      <div formArrayName="questions">
+        <div *ngFor="let question of questions().controls; let questionIndex=index">
+          <div  [formGroupName]="questionIndex">
 
-        <div formArrayName="answers">
-          <div
-            *ngFor="let answer of questionAnswers(questionIndex).controls; let answerIndex=index"
-          >
-            <div [formGroupName]="answerIndex">
-              {{answerIndex}} Answer :
-              <input type="text" formControlName="answer" />
-
-              <button (click)="removeQuestionAnswer(questionIndex,answerIndex)">
-                Remove
-              </button>
+            <div class="flex ">
+              <label class="label"> Q{{questionIndex + 1}} </label>
+              <input class="input-form" type="text" formControlName="question" />
+              <span class="icon-container"  (click)="removeQuestion(questionIndex)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+        </span>
             </div>
+
+            <div formArrayName="answers">
+              <div *ngFor="let answer of questionAnswers(questionIndex).controls; let answerIndex=index">
+                <div class="flex py-2 px-12" [formGroupName]="answerIndex">
+                  <label class="label">{{answerIndex + 1}}.</label>
+                  <input class="input-form" type="text" formControlName="answer" />
+
+                  <span class="icon-container" (click)="removeQuestionAnswer(questionIndex,answerIndex)">
+                <svg  xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+              </span>
+                </div>
+              </div>
+            </div>
+            <button class=" add-btn" type="button" (click)="addQuestionAnswer(questionIndex)"> + Add Answer   </button>
+
+
+
           </div>
         </div>
-        <button type="button" (click)="addQuestionAnswer(questionIndex)">
-          Add Answer
-        </button>
+        <div class="footer">
+          <button class=" btn bg-blue-300" type="button" (click)="addQuestion()"> + Add Question</button>
+          <button class=" btn" type="button" (click)="addQuestion()"> Submit</button>
+        </div>
       </div>
-    </div>
-    <button type="button" (click)="addQuestion()">Add Question</button>
-  </div>
-</form>
+    </form>
 
-{{this.QAForm.value | json}}
+    {{this.QAForm.value | json}}
+
+  </div>
+</div>
