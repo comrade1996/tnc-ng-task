@@ -18,9 +18,7 @@
               <label class="label"> Q{{questionIndex + 1}} </label>
               <input class="input-form" type="text" formControlName="question" />
               <span class="icon-container"  (click)="removeQuestion(questionIndex)">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-          </svg>
+          <ng-icon class="icon" size="30" name="hero-trash-solid"></ng-icon>
         </span>
             </div>
 
@@ -31,21 +29,18 @@
                   <input class="input-form" type="text" formControlName="answer" />
 
                   <span class="icon-container" (click)="removeQuestionAnswer(questionIndex,answerIndex)">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                </svg>
+                 <ng-icon class="icon" size="30" name="hero-trash-solid"></ng-icon>
+
               </span>
                 </div>
               </div>
             </div>
-            <button class=" add-btn" type="button" (click)="addQuestionAnswer(questionIndex)"> + Add Answer   </button>
-
-
+            <button class=" add-btn" type="button" (click)="addQuestionAnswer(questionIndex)"> <ng-icon size="16" name="hero-plus"></ng-icon> Add Answer   </button>
 
           </div>
         </div>
 
-          <button class=" btn" type="button" (click)="addQuestion()"> + Add Question</button>
+          <button class=" btn" type="button" (click)="addQuestion()"> <ng-icon size="16" name="hero-plus"></ng-icon> Add Question</button>
 
       </div>
     </form>
@@ -53,8 +48,8 @@
 
     <div class="footer ">
       <div>
-        <button class="reset-btn " type="button" (click)="resetForm()"> Reset</button>
-        <button class=" btn" type="button" (click)="onSubmit()"> Submit</button>
+        <button class="reset-btn " type="button" (click)="resetForm()"> <ng-icon size="13" name="hero-ban"></ng-icon> Reset </button>
+        <button class=" btn" type="button" (click)="onSubmit()"> <ng-icon size="13" name="hero-paper-airplane"></ng-icon> Submit</button>
       </div>
     </div>
 <!--  For testing purpose only TODO remove in production  {{this.QAForm.value | json}}-->
