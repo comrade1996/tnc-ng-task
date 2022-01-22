@@ -1,0 +1,37 @@
+
+<form [formGroup]="QAForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="questions">
+    <div *ngFor="let question of questions().controls; let questionIndex=index">
+      <div
+        [formGroupName]="questionIndex"
+        style="border: 1px solid rgb(110, 110, 228); padding: 10px; width: 600px; margin: 5px;"
+      >
+        {{questionIndex}} Question :
+        <input type="text" formControlName="question" />
+
+        <button (click)="removeQuestion(questionIndex)">Remove</button>
+
+        <div formArrayName="answers">
+          <div
+            *ngFor="let answer of questionAnswers(questionIndex).controls; let answerIndex=index"
+          >
+            <div [formGroupName]="answerIndex">
+              {{answerIndex}} Answer :
+              <input type="text" formControlName="answer" />
+
+              <button (click)="removeQuestionAnswer(questionIndex,answerIndex)">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addQuestionAnswer(questionIndex)">
+          Add Answer
+        </button>
+      </div>
+    </div>
+    <button type="button" (click)="addQuestion()">Add Question</button>
+  </div>
+</form>
+
+{{this.QAForm.value | json}}
