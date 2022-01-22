@@ -1,5 +1,7 @@
 <div class="cover">
   <div class="card">
+
+    <div class="content">
     <nav class="navbar">
       <img alt="user avatar" class="avatar" src="https://avatars.dicebear.com/api/avataaars/solider.svg"> <span
       class="px-3">Omair Gibreel</span>
@@ -42,14 +44,20 @@
 
           </div>
         </div>
-        <div class="footer">
-          <button class=" btn bg-blue-300" type="button" (click)="addQuestion()"> + Add Question</button>
-          <button class=" btn" type="button" (click)="addQuestion()"> Submit</button>
-        </div>
+
+          <button class=" btn" type="button" (click)="addQuestion()"> + Add Question</button>
+
       </div>
     </form>
+    </div>
 
-    {{this.QAForm.value | json}}
+    <div class="footer ">
+      <div>
+        <button class="reset-btn " type="button" (click)="resetForm()"> Reset</button>
+        <button class=" btn" type="button" (click)="onSubmit()"> Submit</button>
+      </div>
+    </div>
+<!--  For testing purpose only TODO remove in production  {{this.QAForm.value | json}}-->
 
   </div>
 </div>

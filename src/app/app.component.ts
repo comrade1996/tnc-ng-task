@@ -61,4 +61,7 @@ export class AppComponent {
   }
 
 
+  resetForm() {
+    this.questions().clear();
+  }
 }

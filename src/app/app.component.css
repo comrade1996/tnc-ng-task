@@ -1,9 +1,14 @@
 .cover{
-  @apply bg-gray-500 p-10
+  @apply bg-gradient-to-r from-cyan-600 to-blue-700  min-h-screen py-2 px-3  lg:py-16
 }
 
 .card{
-  @apply py-2 px-3 lg:mx-36  lg:py-10 lg:px-56  bg-gray-100 rounded
+  @apply bg-white rounded lg:mx-36
+}
+.content{
+
+  @apply py-2 px-3  lg:py-16 lg:px-56
+
 }
 
 .navbar{
@@ -25,11 +30,15 @@
 }
 
 .add-btn{
-  @apply text-primary bg-secondary p-3 my-2 text-center mx-12 leading-5  transition-colors duration-200 transform rounded-md
+  @apply text-primary bg-secondary p-2 my-2 text-center mx-12 font-bold text-sm  transition-colors duration-200 transform rounded-md
+}
+/*need to refactor*/
+.reset-btn{
+  @apply text-gray-100 bg-gray-500 p-2 my-2 text-center mx-2  transition-colors duration-200 transform rounded-md hover:bg-gray-400 focus:outline-none
 }
 
 .btn {
-  @apply px-6 py-2  mx-3 leading-5  text-white transition-colors duration-200 transform bg-primary rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600
+  @apply p-2 my-2 text-center  text-base   rounded-md bg-blue-500  text-white   hover:bg-blue-400 focus:outline-none
 }
 
 .label {
@@ -56,5 +65,5 @@
 }
 
 .footer{
-  @apply flex justify-end px-2
+  @apply flex justify-end py-2  px-2 mt-2 mx-2 border-t border-solid border-blue-200
 }
