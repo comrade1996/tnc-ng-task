@@ -1,8 +1,8 @@
 # tnc ng task
 
 
-dynamic quiz builder using form arrays with Angular 13 and Tailwind
-
+dynamic quiz builder using form arrays with Angular 13  Tailwindcss  and Cypress
+ 
 
 ## Development server
 
@@ -17,4 +17,4 @@ if the development server is not running you must run it first
 
 ## TODOs
 
-add dark mode and do some refactor.
+Add dark mode , do some refacto and add missing tests to achieve more ui test coverage.
