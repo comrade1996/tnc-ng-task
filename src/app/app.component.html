@@ -16,7 +16,7 @@
 
             <div class="flex ">
               <label class="label"> Q{{questionIndex + 1}} </label>
-              <input class="input-form" type="text" formControlName="question" />
+              <input data-cy="question-input" class="input-form" type="text" formControlName="question" />
               <span class="icon-container"  (click)="removeQuestion(questionIndex)">
           <ng-icon class="icon" size="30" name="hero-trash-solid"></ng-icon>
         </span>
@@ -40,7 +40,7 @@
           </div>
         </div>
 
-          <button class=" btn" type="button" (click)="addQuestion()"> <ng-icon size="16" name="hero-plus"></ng-icon> Add Question</button>
+          <button  data-cy="add-question" class="btn" type="button" (click)="addQuestion()"> <ng-icon size="16" name="hero-plus"></ng-icon> Add Question</button>
 
       </div>
     </form>
